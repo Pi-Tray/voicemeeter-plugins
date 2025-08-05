@@ -1,5 +1,8 @@
 name: Build and Push Release
 
+permissions:
+  contents: write
+
 on:
   push:
     branches: [main]
@@ -29,7 +32,8 @@ jobs:
 
           git checkout --orphan release
           git rm -rf .
+          git rm -rf node_modules
           cp -r dist/* ./
           git add .
           git commit -m "Release build"
-          git push --force origin release
+          git push --force "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:release
