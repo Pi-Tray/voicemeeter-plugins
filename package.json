@@ -1,0 +1,20 @@
+{
+  "name": "@pi-tray/voicemeeter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "obfuscatedgenerated",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^24.2.0",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "voicemeeter-connector": "^2.1.5"
+  }
+}
