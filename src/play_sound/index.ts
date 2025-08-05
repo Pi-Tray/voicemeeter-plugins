@@ -1,7 +1,7 @@
 import path from "path";
 import fs from "fs";
 
-import { Voicemeeter } from "voicemeeter-connector";
+import voicemeeter from "voicemeeter-remote";
 
 export const display_name = "Play sound with Voicemeeter";
 
@@ -32,11 +32,11 @@ export const handle_push = async ({config}: Options): Promise<void> => {
         throw new Error(`File does not exist at path: ${config.path}`);
     }
 
-    const vm = await Voicemeeter.init();
-    vm.connect();
+    await voicemeeter.init();
+    voicemeeter.login();
 
-    await vm.setOption(`Recorder.load=${config.path}`);
-    await vm.setOption("Recorder.play=1");
+    voicemeeter.setRawParameterString("Recorder.load", config.path);
+    voicemeeter.setRawParameterFloat("Recorder.play", 1);
 
-    vm.disconnect();
+    voicemeeter.logout();
 }
