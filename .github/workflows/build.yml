@@ -32,7 +32,10 @@ jobs:
 
           git checkout --orphan release
           git rm -rf .
-          git rm -rf node_modules
+          rm -rf .github
+          rm -rf node_modules
+          rm -f tsconfig.json
+          rm -f .gitignore
           cp -r dist/* ./
           git add .
           git commit -m "Release build"
