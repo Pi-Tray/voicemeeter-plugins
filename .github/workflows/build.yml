@@ -30,6 +30,8 @@ jobs:
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
 
+          # stupid but easy method
+          cp package.json package-lock.json /tmp/
           git checkout --orphan release
           git rm -rf .
           rm -rf .github
@@ -38,6 +40,7 @@ jobs:
           rm -f .gitignore
           cp -r dist/* ./
           rm -rf dist
+          cp /tmp/package.json /tmp/package-lock.json ./
           git add .
           git commit -m "Release build"
           git push --force "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:release
