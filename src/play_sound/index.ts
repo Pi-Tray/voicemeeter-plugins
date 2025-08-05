@@ -12,7 +12,13 @@ export const config_template = {
     }
 };
 
-export const handle_push = async (config?: { path?: string }): Promise<void> => {
+interface Options {
+    config?: {
+        path?: string;
+    }
+}
+
+export const handle_push = async ({config}: Options): Promise<void> => {
     if (!config || !config.path) {
         throw new Error("No path provided in config.");
     }
