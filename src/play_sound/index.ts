@@ -38,5 +38,8 @@ export const handle_push = async ({config}: Options): Promise<void> => {
     voicemeeter.setRawParameterString("Recorder.load", config.path);
     voicemeeter.setRawParameterFloat("Recorder.play", 1);
 
-    voicemeeter.logout();
+    // ensure sound is played before logging out
+    setTimeout(() => {
+        voicemeeter.logout();
+    }, 100);
 }
