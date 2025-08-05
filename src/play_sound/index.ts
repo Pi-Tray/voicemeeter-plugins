@@ -6,7 +6,7 @@ import type {Plugin} from "pi-tray-server/src/types";
 import voicemeeter from "voicemeeter-remote";
 
 export default {
-    display_name: "Play sound with Voicemeeter",
+    display_name: "Play a sound with Voicemeeter",
 
     config_template: {
         path: {
