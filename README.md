@@ -1,8 +1,17 @@
 # @pi-tray/voicemeeter 🗣️
 
+## Installation
+
+### From server root
+
+```bash
+npm run plugin:npm install https://github.com/Pi-Tray/voicemeeter-plugins#release
+```
+
+### From plugin-env
+
 ```sh
-cd plugin-env
-npm i https://github.com/Pi-Tray/voicemeeter-plugins#release
+npm install https://github.com/Pi-Tray/voicemeeter-plugins#release
 ```
 
 ## Plugins
