@@ -1,7 +1,7 @@
 import path from "path";
 import fs from "fs";
 
-import type {Plugin} from "pi-tray-server/src/types";
+import type {Plugin} from "@pi-tray/types";
 
 import voicemeeter from "voicemeeter-remote";
 
